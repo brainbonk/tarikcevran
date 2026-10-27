@@ -1,6 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
 
+export const metadata = {
+  title: 'Tarık Çevran | 1. Sınıf Sanayi Dalgıcı ve Su Altı Hizmetleri',
+  description: 'Profesyonel sanayi dalgıçlığı, liman inşaat/bakım, su altı kaynak-kesim ve acil su altı eşya arama-kurtarma hizmetleri.',
+  keywords: 'sanayi dalgıcı, 1. sınıf dalgıç, first class diver, su altı kesim kaynak, acil eşya çıkarma, deniz telefon çıkarma, iskele tamiri, Tarık Çevran, ege bölgesi dalgıç, marmara bölgesi dalgıç, akdeniz bölgesi dalgıç, karadeniz bölgesi dagıç',
+};
+
 export default function HomePage() {
   const phoneNumber = "+905418741701"; // Tarık Bey'in telefon numarası
 
