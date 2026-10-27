@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function FloatingCallButton() {
   // Tarık Bey'in telefon numarasını buraya yazabilirsin (Örn: "+905... ")
-  const phoneNumber = "+905000000000"; 
+  const phoneNumber = "+905418741701"; 
   const whatsappMessage = "Merhaba, su altı arama / dalgıçlık hizmeti için acil bilgi almak istiyorum.";
 
   return (

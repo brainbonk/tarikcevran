@@ -6,7 +6,7 @@ export const metadata = {
 };
 
 export default function ContactPage() {
-  const phoneNumber = "+905000000000"; // Tarık Bey'in telefon numarası
+  const phoneNumber = "+905418741701"; // Tarık Bey'in telefon numarası
   const whatsappMessage = "Merhaba, su altı hizmetleri hakkında bilgi ve teklif almak istiyorum.";
 
   return (
@@ -38,7 +38,7 @@ export default function ContactPage() {
               href={`tel:${phoneNumber}`} 
               className="text-lg font-bold text-white hover:text-blue-400 transition block"
             >
-              0500 000 00 00
+              0(541) 874 1701
             </a>
           </div>
 

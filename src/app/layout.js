@@ -8,7 +8,7 @@ import { BrandLogo } from '@/components/BrandLogo';
 
 export default function RootLayout({ children }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const phoneNumber = "+905000000000";
+  const phoneNumber = "+905418741701";
 
   return (
     <html lang="tr">

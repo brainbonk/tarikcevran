@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 export default function HomePage() {
-  const phoneNumber = "+905000000000"; // Tarık Bey'in telefon numarası
+  const phoneNumber = "+905418741701"; // Tarık Bey'in telefon numarası
 
   return (
     <div className="space-y-16 pb-16 w-full overflow-x-hidden">

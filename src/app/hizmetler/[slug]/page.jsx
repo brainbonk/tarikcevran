@@ -87,7 +87,7 @@ export async function generateMetadata({ params }) {
 export default async function ServiceDetailPage({ params }) {
   const { slug } = await params;
   const service = servicesData[slug];
-  const phoneNumber = "+905000000000";
+  const phoneNumber = "+905418741701";
 
   if (!service) {
     return (

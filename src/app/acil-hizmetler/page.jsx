@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function AcilHizmetlerPage() {
-  const phoneNumber = "+905000000000"; // Tarık Bey'in numarası
+  const phoneNumber = "+905418741701"; // Tarık Bey'in numarası
   const whatsappMessage = "Acil su altı müdahale / eşya kurtarma için bilgi almak istiyorum.";
 
   return (
