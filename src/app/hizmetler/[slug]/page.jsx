@@ -88,6 +88,7 @@ export default async function ServiceDetailPage({ params }) {
   const { slug } = await params;
   const service = servicesData[slug];
   const phoneNumber = "+905418741701";
+  const whatsappMessage = "Merhaba, profesyonel hizmetler için bilgi almak istiyorum.";
 
   if (!service) {
     return (
@@ -148,10 +149,12 @@ export default async function ServiceDetailPage({ params }) {
             📞 Hemen Ara
           </a>
           <a
-            href="/iletisim"
-            className="bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg transition"
+            href={`https://wa.me/${phoneNumber.replace('+', '')}?text=${encodeURIComponent(whatsappMessage)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-base"
           >
-            📋 İletişim / Teklif Formu
+            <span>💬 WhatsApp</span>
           </a>
         </div>
       </div>

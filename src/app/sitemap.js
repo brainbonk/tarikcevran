@@ -36,12 +36,6 @@ export default async function sitemap() {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
-    {
-      url: `${baseUrl}/iletisim`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
     ...serviceUrls,
   ];
 }

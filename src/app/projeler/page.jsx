@@ -8,6 +8,8 @@ export const metadata = {
 
 export default function ProjectsPage() {
   // Örnek Proje Veritabanı (İleride fotoğraflar ve gerçek proje detaylarıyla güncellenebilir)
+  const phoneNumber = "+905418741701";
+  const whatsappMessage = "Merhaba, profesyonel hizmetler için bilgi almak istiyorum.";
   const projects = [
     {
       id: 1,
@@ -103,13 +105,21 @@ export default function ProjectsPage() {
         <p className="text-slate-300 text-sm max-w-xl mx-auto">
           Tarık Çevran ile hemen iletişime geçerek detayları görüşebilir, projenize özel teklif alabilirsiniz.
         </p>
-        <div className="pt-2">
-          <Link
-            href="/iletisim"
-            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg transition text-sm"
+        <div className="flex flex-col sm:flex-row justify-center gap-4 pt-2">
+          <a
+            href={`tel:${phoneNumber}`}
+            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg transition"
           >
-            İletişime Geçin &rarr;
-          </Link>
+            📞 Hemen Ara
+          </a>
+          <a
+            href={`https://wa.me/${phoneNumber.replace('+', '')}?text=${encodeURIComponent(whatsappMessage)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-base"
+          >
+            <span>💬 WhatsApp</span>
+          </a>
         </div>
       </div>
 

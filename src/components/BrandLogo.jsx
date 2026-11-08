@@ -11,6 +11,7 @@ export function BrandLogo() {
           src="/logo2.png" 
           alt="Tarık Çevran Sualtı Logo" 
           fill 
+          sizes="(max-width: 768px) 100vw, 200px"
           className="object-cover group-hover:scale-103 transition-transform duration-100"
         />
       </div>
@@ -21,7 +22,7 @@ export function BrandLogo() {
           ÇEVRAN
         </span>
         <span className="text-[11px] tracking-[0.2em] text-blue-400 font-bold uppercase mt-1.5 leading-none">
-          SUALTI HİZMETİ
+          SUALTI HİZMETLERİ
         </span>
       </div>
     </div>

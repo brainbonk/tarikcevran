@@ -25,7 +25,7 @@ export default function AcilHizmetlerPage() {
             href={`tel:${phoneNumber}`}
             className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-base"
           >
-            <span>📞 Hemen Ara (0500 000 00 00)</span>
+            <span>📞 Hemen Ara +90 (541) 874 17 01</span>
           </a>
           <a
             href={`https://wa.me/${phoneNumber.replace('+', '')}?text=${encodeURIComponent(whatsappMessage)}`}

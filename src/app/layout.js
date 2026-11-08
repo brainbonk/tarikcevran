@@ -19,17 +19,15 @@ export default function RootLayout({ children }) {
           <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
             
             {/* Marka / Logo */}
-            <Link href="/" onClick={() => setIsMenuOpen(false)}>
+            <Link href="/" title='Tarık ÇEVRAN Anasayfa' onClick={() => setIsMenuOpen(false)}>
               <BrandLogo />
             </Link>
             
             {/* Masaüstü Menü (Large Screens) */}
             <nav className="hidden md:flex gap-6 text-sm font-medium text-slate-300 items-center">
-              <Link href="/" className="hover:text-blue-400 transition">Ana Sayfa</Link>
+              <Link href="/acil-hizmetler" className="hover:text-red-400 transition">🚨 Acil Arama Kurtarma</Link>
               <Link href="/hizmetler" className="hover:text-blue-400 transition">Hizmetler</Link>
-              <Link href="/acil-hizmetler" className="hover:text-red-400 transition">Acil Arama Kurtarma</Link>
               <Link href="/projeler" className="hover:text-blue-400 transition">Projeler</Link>
-              <Link href="/iletisim" className="hover:text-blue-400 transition">İletişim</Link>
             </nav>
 
             <div className="hidden md:block">
@@ -37,7 +35,7 @@ export default function RootLayout({ children }) {
                 href={`tel:${phoneNumber}`} 
                 className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition shadow-md"
               >
-                Hemen Ara
+                📞 Hemen Ara +90 (541) 874 17 01
               </a>
             </div>
 
@@ -66,20 +64,6 @@ export default function RootLayout({ children }) {
           {isMenuOpen && (
             <div className="md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3 animate-fadeIn">
               <Link 
-                href="/" 
-                onClick={() => setIsMenuOpen(false)} 
-                className="block py-2.5 px-3 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-blue-400 transition"
-              >
-                Ana Sayfa
-              </Link>
-              <Link 
-                href="/hizmetler" 
-                onClick={() => setIsMenuOpen(false)} 
-                className="block py-2.5 px-3 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-blue-400 transition"
-              >
-                Hizmetler Kataloğu
-              </Link>
-              <Link 
                 href="/acil-hizmetler" 
                 onClick={() => setIsMenuOpen(false)} 
                 className="block py-2.5 px-3 rounded-lg text-base font-medium text-red-400 hover:bg-red-950/40 transition"
@@ -87,18 +71,18 @@ export default function RootLayout({ children }) {
                 🚨 Acil Arama Kurtarma
               </Link>
               <Link 
+                href="/hizmetler" 
+                onClick={() => setIsMenuOpen(false)} 
+                className="block py-2.5 px-3 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-blue-400 transition"
+              >
+                Hizmetler
+              </Link>
+              <Link 
                 href="/projeler" 
                 onClick={() => setIsMenuOpen(false)} 
                 className="block py-2.5 px-3 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-blue-400 transition"
               >
-                Projeler & Galeri
-              </Link>
-              <Link 
-                href="/iletisim" 
-                onClick={() => setIsMenuOpen(false)} 
-                className="block py-2.5 px-3 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-blue-400 transition"
-              >
-                İletişim & Teklif
+                Projeler
               </Link>
             </div>
           )}
