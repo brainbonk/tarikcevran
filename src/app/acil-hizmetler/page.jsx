@@ -1,9 +1,13 @@
 import React from 'react';
+import { CONTACT_INFO } from '@/constants/contact';
+
+export const metadata = {
+  title: 'Acil Hizmetlerimiz | Tarık Çevran - Su altı Arama ve Kurtarma, Kayıp Eşya Bulma ve Çıkarma',
+  description: '1. sınıf dalgıç, Sanayi dalgıçlığı, su altı arama, su altı kurtarma, halat kurtarma, zincir kurtarma, eşya bulma, eşya çıkartma, acil hizmetlerimiz.',
+  keywords: 'acil dalgıç, 7/24 acil dalgıç, su altı arama kurtarma, denize düşen telefonu çıkarma, denizden eşya çıkarma, çapa kurtarma, zincir takılması kurtarma, pervaneye halat dolanması, acil su altı hizmeti, marinalarda acil dalgıç, ege acil dalgıç, kuşadası acil dalgıç, bodrum acil dalgıç, ayvalık acil dalgıç',
+};
 
 export default function AcilHizmetlerPage() {
-  const phoneNumber = "+905418741701"; // Tarık Bey'in numarası
-  const whatsappMessage = "Acil su altı müdahale / eşya kurtarma için bilgi almak istiyorum.";
-
   return (
     <div className="max-w-5xl mx-auto px-4 py-12 space-y-12">
       
@@ -22,13 +26,15 @@ export default function AcilHizmetlerPage() {
         {/* Hızlı Arama Butonları */}
         <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
           <a
-            href={`tel:${phoneNumber}`}
+            href={`tel:${CONTACT_INFO.phoneNumber}`}
+            title={`Tarık ÇEVRAN ${CONTACT_INFO.maskedNumber}`}
             className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-base"
           >
             <span>📞 Hemen Ara +90 (541) 874 17 01</span>
           </a>
           <a
-            href={`https://wa.me/${phoneNumber.replace('+', '')}?text=${encodeURIComponent(whatsappMessage)}`}
+            href={CONTACT_INFO.whatsappLink}
+            title= {`Tarık ÇEVRAN WhatsApp ${CONTACT_INFO.maskedNumber}`}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-base"

@@ -2,8 +2,9 @@ import React from 'react';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Hizmetlerimiz | Tarık Çevran - Sualtı Kesim, Kaynak ve Tersane Çözümleri',
-  description: 'Sanayi dalgıçlığı, su altı kaynak-kesim, tersane hizmetleri, pervane polish, NDT kalınlık ölçümü ve acil arama-kurtarma hizmetlerimiz.',
+  title: 'Hizmetlerimiz | Tarık Çevran - Su altı Kesim, Kaynak ve Tersane Çözümleri',
+  description: '1. sınıf dalgıç, Sanayi dalgıçlığı, su altı kaynak, su altı kesim, tersane hizmetleri, pervane polish, NDT kalınlık ölçümü ve acil arama-kurtarma hizmetlerimiz.',
+  keywords: 'su altı kaynak, su altı kesim, oxy arc kesim, su altı NDT ölçümü, su altı sac kalınlık ölçümü, pervane polisajı, pervane parlatma, kavitasyon onarımı, tersane dalgıç hizmetleri, liman inşaat dalgıcı, iskele bakım onarım, deniz altı boru hattı montajı, sanayi dalgıcı, 1. sınıf dalgıç, first class diver, su altı sörvey hizmetleri',
 };
 
 export default function ServicesPage() {
@@ -23,18 +24,18 @@ export default function ServicesPage() {
       description: 'Gemi havuzlama desteği, pervane kontrol ve polish (parlatma), karina kontrol ve temizliği, speedlog & echosounder montajı.',
     },
     {
-      slug: 'sualti-ndt-ve-survey',
-      title: 'Sualtı NDT Kalınlık Ölçümü ve Sörvey',
+      slug: 'su-alti-ndt-ve-survey',
+      title: 'Su Altı NDT Kalınlık Ölçümü ve Sörvey',
       category: 'Mühendislik & Raporlama',
       badgeColor: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
-      description: 'Klas kuruluşları standartlarında sualtı NDT kalınlık ölçümleri, detaylı yapısal sörvey, video kayıt ve teknik raporlama.',
+      description: 'Klas kuruluşları standartlarında su altı NDT kalınlık ölçümleri, detaylı yapısal sörvey, video kayıt ve teknik raporlama.',
     },
     {
       slug: 'liman-ve-iskele-bakimi',
       title: 'Liman, Marina ve İskele Bakım Onarımı',
       category: 'Kurumsal & Sanayi',
       badgeColor: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
-      description: 'Deniz deşarj hatları, kazık koruma işlemleri, tonoz zincir bakımları, sualtı karot kesme ve delme operasyonları.',
+      description: 'Deniz deşarj hatları, kazık koruma işlemleri, tonoz zincir bakımları, su altı karot kesme ve delme operasyonları.',
     },
     {
       slug: 'su-alti-esya-arama-kurtarma',
@@ -70,7 +71,9 @@ export default function ServicesPage() {
                 {service.category}
               </span>
               <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition">
-                {service.title}
+                <Link href={`/hizmetler/${service.slug}`}>
+                  {service.title}
+                </Link>
               </h3>
               <p className="text-slate-300 text-sm leading-relaxed">
                 {service.description}

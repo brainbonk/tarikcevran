@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { CONTACT_INFO } from '@/constants/contact';
 
 // Tüm hizmetlerin detaylı veritabanı
 const servicesData = {
@@ -29,8 +30,8 @@ const servicesData = {
     ],
     features: ['Yakıt Tasarrufu Sağlar', 'Tersane Standartları', 'Hızlı Müdahale']
   },
-  'sualti-ndt-ve-survey': {
-    title: 'Sualtı NDT Kalınlık Ölçümü ve Sörvey',
+  'su-alti-ndt-ve-survey': {
+    title: 'Su Altı NDT Kalınlık Ölçümü ve Sörvey',
     category: 'Mühendislik & Raporlama',
     badgeColor: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
     description: 'Klas kuruluşları standartlarında ultrasonik su altı sac kalınlık ölçümü (NDT), HD video ve fotoğraf destekli teknik sörvey raporlaması.',
@@ -50,7 +51,7 @@ const servicesData = {
     details: [
       'Deniz deşarj boru hattı kontrolleri, boru kelepçeleme ve tamir',
       'Marina tonoz zincir kontrolü, bakımı ve değişimi',
-      'Sualtı beton karot delme ve çelik kesim işleri',
+      'Su altı beton karot delme ve çelik kesim işleri',
       'Katodik koruma (tutya) montajı ve korozyon önleme'
     ],
     features: ['Uzun Ömürlü Çözüm', 'Endüstriyel Ekipman', 'Yerinde İnceleme']
@@ -79,7 +80,7 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: `${service.title} | Tarık Çevran Sualtı Hizmetleri`,
+    title: `${service.title} | Tarık Çevran Su Altı Hizmetleri`,
     description: service.description,
   };
 }
@@ -87,8 +88,6 @@ export async function generateMetadata({ params }) {
 export default async function ServiceDetailPage({ params }) {
   const { slug } = await params;
   const service = servicesData[slug];
-  const phoneNumber = "+905418741701";
-  const whatsappMessage = "Merhaba, profesyonel hizmetler için bilgi almak istiyorum.";
 
   if (!service) {
     return (
@@ -143,13 +142,15 @@ export default async function ServiceDetailPage({ params }) {
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a
-            href={`tel:${phoneNumber}`}
+            href={`tel:${CONTACT_INFO.phoneNumber}`}
+            title={`Tarık ÇEVRAN ${CONTACT_INFO.maskedNumber}`}
             className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg transition"
           >
             📞 Hemen Ara
           </a>
           <a
-            href={`https://wa.me/${phoneNumber.replace('+', '')}?text=${encodeURIComponent(whatsappMessage)}`}
+            href={CONTACT_INFO.whatsappLink}
+            title= {`Tarık ÇEVRAN WhatsApp ${CONTACT_INFO.maskedNumber}`}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-base"

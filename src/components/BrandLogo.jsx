@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 export function BrandLogo() {
   return (
@@ -9,7 +8,7 @@ export function BrandLogo() {
       <div className="w-16 h-13 flex-shrink-0 relative flex items-center justify-center bg-slate-900 rounded-2xl border border-blue-500/30 overflow-hidden shadow-lg">
         <Image 
           src="/logo2.png" 
-          alt="Tarık Çevran Sualtı Logo" 
+          alt="Tarık Çevran Su Altı Logo" 
           fill 
           sizes="(max-width: 768px) 100vw, 200px"
           className="object-cover group-hover:scale-103 transition-transform duration-100"
@@ -22,7 +21,7 @@ export function BrandLogo() {
           ÇEVRAN
         </span>
         <span className="text-[11px] tracking-[0.2em] text-blue-400 font-bold uppercase mt-1.5 leading-none">
-          SUALTI HİZMETLERİ
+          SU ALTI HİZMETLERİ
         </span>
       </div>
     </div>
