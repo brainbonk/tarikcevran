@@ -26,7 +26,7 @@ export default function ProjectsClient() {
       badgeColor: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
       location: 'Aliağa / İzmir',
       description: 'İzmir Aliağa tersane bölgesinde yürütülen bu operasyonda; deniz tabanındaki veya gemi altyapısındaki hatlar için sızdırmaz ve yüksek mukavemetli su altı kaynağı kusursuz bir şekilde tamamlanmıştır.',
-      imagePlaceholder: '/images/izmir-sualti-kaynak.jpeg',
+      imagePlaceholder: '/images/izmir-su-alti-kaynak.jpeg',
       youtubeId: 'Kp07VOmXRaI'
     },
     {

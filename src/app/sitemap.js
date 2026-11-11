@@ -5,7 +5,7 @@ export default async function sitemap() {
   const services = [
     'su-alti-kaynak-kesim',
     'tersane-ve-gemi-destek',
-    'sualti-ndt-ve-survey',
+    'su-alti-ndt-ve-survey',
     'liman-ve-iskele-bakimi',
     'su-alti-esya-arama-kurtarma',
   ];
