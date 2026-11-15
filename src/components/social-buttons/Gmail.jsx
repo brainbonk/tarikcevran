@@ -39,7 +39,7 @@ export default function Gmail() {
             </svg>) : (
                 <>
                     <span className="absolute -top-10 left-1/2 -translate-x-1/2 px-2.5 py-1 text-xs font-medium text-white bg-gray-900 rounded-md shadow-sm transition-all duration-300 whitespace-nowrap border border-gray-500">
-                        Copied the email
+                        Copied the email ({CONTACT_INFO.gmailLink})
                     </span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#111827" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="20 6 9 17 4 12"></polyline>

@@ -1,9 +1,9 @@
 import React from 'react';
 import { CONTACT_INFO } from '@/constants/contact';
 
-export default function Instagram() {
+export default function Instagram({ type }) {
     return (
-        <a href={CONTACT_INFO.instagramLink} title="Instagram Tarık ÇEVRAN" target="_blank" rel="noopener noreferrer"
+        <a href={type === "corporate" ? CONTACT_INFO.instagramLink : CONTACT_INFO.personalInstagramLink} title="Instagram Tarık ÇEVRAN" target="_blank" rel="noopener noreferrer"
             className="bg-gray-400 p-2 rounded-lg flex items-center border border-gray-300 justify-center transition-all duration-500 hover:border-gray-100 hover:bg-gray-100">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 71 72"
                 fill="none">

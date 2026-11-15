@@ -6,6 +6,7 @@ import { BrandLogo } from '@/components/BrandLogo';
 import FloatingCallButton from '@/components/FloatingCallButton';
 import { CONTACT_INFO } from '@/constants/contact';
 import './globals.css';
+import Footer from '@/components/Footer';
 
 export default function RootLayout({ children }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -92,7 +93,7 @@ export default function RootLayout({ children }) {
         </main>
 
         {/* Footer */}
-        <footer className="bg-slate-900 border-t border-slate-800 py-8 text-center text-sm text-slate-400 mt-auto">
+        {/* <footer className="bg-slate-900 border-t border-slate-800 py-8 text-center text-sm text-slate-400 mt-auto">
           <div className="max-w-7xl mx-auto px-4 space-y-2">
             <p>&copy; 2026 Tarık Çevran - 1. Sınıf Sanayi Dalgıcı Tüm hakları saklıdır.</p>
             <p className="text-xs text-slate-500">Endüstriyel Su Altı Çözümleri & Acil Bireysel Destek Hizmetleri</p>
@@ -103,7 +104,8 @@ export default function RootLayout({ children }) {
               </a>
             </p>
           </div>
-        </footer>
+        </footer> */}
+        <Footer />
 
         <FloatingCallButton />
       </body>

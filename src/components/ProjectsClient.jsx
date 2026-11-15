@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { CONTACT_INFO } from '@/constants/contact';
 
@@ -21,12 +21,12 @@ export default function ProjectsClient() {
     },
     {
       id: 2,
-      title: 'Gemi Altyapısı Su Altı Kaynak Operasyonu',
+      title: 'Gemi Altyapısı Su Altı Kesim Operasyonu',
       category: 'Sanayi & Kurumsal',
       badgeColor: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
       location: 'Aliağa / İzmir',
-      description: 'İzmir Aliağa tersane bölgesinde yürütülen bu operasyonda; deniz tabanındaki veya gemi altyapısındaki hatlar için sızdırmaz ve yüksek mukavemetli su altı kaynağı kusursuz bir şekilde tamamlanmıştır.',
-      imagePlaceholder: '/images/izmir-su-alti-kaynak.jpeg',
+      description: 'İzmir Aliağa tersane bölgesinde yürütülen bu operasyonda; deniz tabanındaki veya gemi altyapısındaki hatlar için sızdırmaz ve yüksek mukavemetli su altı kesimi kusursuz bir şekilde tamamlanmıştır.',
+      imagePlaceholder: '/images/izmir-su-alti-kesim.jpeg',
       youtubeId: 'Kp07VOmXRaI'
     },
     {
@@ -101,85 +101,133 @@ export default function ProjectsClient() {
     }
   ];
 
+  // Popup açıldığında arka plan kaydırmasını kilitle ve ESC tuşunu dinle
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setActiveVideoId(null);
+    };
+
+    if (activeVideoId) {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [activeVideoId]);
+
   return (
-    <div className="max-w-6xl mx-auto px-4 py-16 space-y-12">
-      
-      {/* Sayfa Üst Başlık */}
-      <div className="text-center space-y-4 max-w-3xl mx-auto">
-        <span className="inline-block bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-          Saha Deneyimi & Kanıtlar
-        </span>
-        <h1 className="text-3xl md:text-5xl font-extrabold text-white">
-          Projelerimiz & Saha Galerisi
-        </h1>
-        <p className="text-slate-300 text-base md:text-lg">
-          Büyük liman operasyonlarından acil bireysel müdahalelere kadar sahada gerçekleştirdiğimiz çalışmalardan kareler. Videoları izlemek için kartlara tıklayabilirsiniz.
-        </p>
-      </div>
+    <>
+      <div className="max-w-6xl mx-auto px-4 py-16 space-y-12">
 
-      {/* Projeler Grid Listesi */}
-      <div className="grid md:grid-cols-2 gap-8">
-        {projects.map((project) => (
-          <div 
-            key={project.id} 
-            onClick={project.youtubeId !== 'null' ? () => {setActiveVideoId(project.youtubeId); setActiveVideoTitle(`${project.title} 📍${project.location}`);} : undefined}
-            title={project.youtubeId !== 'null' ? project.title + " videosunu izlemek için tıklayın" : project.title}
-            className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-slate-700 transition shadow-xl group cursor-pointer relative"
-            style={project.youtubeId !== 'null' ? { cursor: 'pointer' } : { cursor: 'default' }}
-          >
-            {/* Oynat (Play) İkonu Overlay Efekti */}
-            {project.youtubeId !== 'null' && (
-            <div className="absolute top-4 right-4 z-10 bg-slate-950/80 backdrop-blur-sm text-white p-2 rounded-full border border-slate-700 opacity-60 group-hover:opacity-100 transition shadow-lg flex items-center gap-1.5 px-3 text-xs font-semibold">
-              <span>▶ Videoyu İzle</span>
-            </div>)}
+        {/* Sayfa Üst Başlık */}
+        <div className="text-center space-y-4 max-w-3xl mx-auto">
+          <span className="inline-block bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+            Saha Deneyimi & Kanıtlar
+          </span>
+          <h1 className="text-3xl md:text-5xl font-extrabold text-white">
+            Projelerimiz & Saha Galerisi
+          </h1>
+          <p className="text-slate-300 text-base md:text-lg">
+            Büyük liman operasyonlarından acil bireysel müdahalelere kadar sahada gerçekleştirdiğimiz çalışmalardan kareler. Videoları izlemek için kartlara tıklayabilirsiniz.
+          </p>
+        </div>
 
-            {/* Görsel Alanı */}
-            <div className="bg-slate-950 h-56 flex items-center justify-center border-b border-slate-800 text-slate-500 font-medium text-sm overflow-hidden relative">
-              <Image 
-                src={project.imagePlaceholder}
-                width={400}
-                height={224}
-                alt={project.title}
-                priority
-                className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
-              />
-            </div>
+        {/* Projeler Grid Listesi */}
+        <div className="grid md:grid-cols-2 gap-8">
+          {projects.map((project) => (
+            <div
+              key={project.id}
+              onClick={project.youtubeId !== 'null' ? () => { setActiveVideoId(project.youtubeId); setActiveVideoTitle(`${project.title} 📍${project.location}`); } : undefined}
+              title={project.youtubeId !== 'null' ? project.title + " videosunu izlemek için tıklayın" : project.title}
+              className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-slate-700 transition shadow-xl group cursor-pointer relative"
+              style={project.youtubeId !== 'null' ? { cursor: 'pointer' } : { cursor: 'default' }}
+            >
+              {/* Oynat (Play) İkonu Overlay Efekti */}
+              {project.youtubeId !== 'null' && (
+                <div className="absolute top-4 right-4 z-10 bg-slate-950/80 backdrop-blur-sm text-white p-2 rounded-full border border-slate-700 opacity-60 group-hover:opacity-100 transition shadow-lg flex items-center gap-1.5 px-3 text-xs font-semibold">
+                  <span>▶ Videoyu İzle</span>
+                </div>)}
 
-            <div className="p-8 space-y-4 flex-grow flex flex-col justify-between">
-              <div className="space-y-3">
-                <div className="flex items-center justify-between gap-2">
-                  <span className={`inline-block text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border ${project.badgeColor}`}>
-                    {project.category}
-                  </span>
-                  <span className="text-xs text-slate-400 font-medium">📍 {project.location}</span>
+              {/* Görsel Alanı */}
+              <div className="bg-slate-950 h-56 flex items-center justify-center border-b border-slate-800 text-slate-500 font-medium text-sm overflow-hidden relative">
+                <Image
+                  src={project.imagePlaceholder}
+                  width={400}
+                  height={224}
+                  alt={project.title}
+                  priority
+                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+
+              <div className="p-8 space-y-4 flex-grow flex flex-col justify-between">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className={`inline-block text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border ${project.badgeColor}`}>
+                      {project.category}
+                    </span>
+                    <span className="text-xs text-slate-400 font-medium">📍 {project.location}</span>
+                  </div>
+
+                  <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition">
+                    {project.title}
+                  </h3>
+
+                  <p className="text-slate-300 text-sm leading-relaxed">
+                    {project.description}
+                  </p>
                 </div>
-                
-                <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition">
-                  {project.title}
-                </h3>
-                
-                <p className="text-slate-300 text-sm leading-relaxed">
-                  {project.description}
-                </p>
               </div>
             </div>
+          ))}
+        </div>
+
+        {/* Alt Çağrı Kutusu */}
+        <div className="bg-gradient-to-r from-slate-900 to-blue-950/40 border border-slate-800 rounded-2xl p-8 text-center space-y-4">
+          <h3 className="text-2xl font-bold text-white">Benzer Bir Proje veya Acil Müdahaleye mi İhtiyacınız Var?</h3>
+          <p className="text-slate-300 text-sm max-w-xl mx-auto">
+            Tarık Çevran ile hemen iletişime geçerek detayları görüşebilir, projenize özel teklif alabilirsiniz.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4 pt-2">
+            <a
+              href={`tel:${CONTACT_INFO.phoneNumber}`}
+              title={`Tarık ÇEVRAN ${CONTACT_INFO.maskedNumber}`}
+              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg transition"
+            >
+              📞 Hemen Ara
+            </a>
+            <a
+              href={CONTACT_INFO.whatsappLink}
+              title={`Tarık ÇEVRAN WhatsApp ${CONTACT_INFO.maskedNumber}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-base"
+            >
+              <span>💬 WhatsApp</span>
+            </a>
           </div>
-        ))}
+        </div>
+
       </div>
 
       {/* YOUTUBE VIDEO POPUP (MODAL) */}
       {activeVideoId && (
         <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
           <div className="bg-slate-900 border border-slate-800 w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl relative flex flex-col">
-            
+
             {/* Modal Üst Kısım / Kapatma Butonu */}
             <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800 bg-slate-950">
               <span className="text-white font-semibold text-sm">{activeVideoTitle} - Tarık ÇEVRAN</span>
-              <button 
-                onClick={() => {setActiveVideoId(null); setActiveVideoTitle(null);}}
-                className="text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded-lg text-sm font-bold transition cursor-pointer"
+              <button
+                onClick={() => { setActiveVideoId(null); setActiveVideoTitle(null); }}
+                className="text-slate-400 hover:text-white bg-red-900 hover:bg-red-700 px-3 py-1.5 rounded-lg text-sm font-bold transition cursor-pointer"
               >
-                ✕ Kapat
+                ✕
               </button>
             </div>
 
@@ -196,33 +244,6 @@ export default function ProjectsClient() {
           </div>
         </div>
       )}
-
-      {/* Alt Çağrı Kutusu */}
-      <div className="bg-gradient-to-r from-slate-900 to-blue-950/40 border border-slate-800 rounded-2xl p-8 text-center space-y-4">
-        <h3 className="text-2xl font-bold text-white">Benzer Bir Proje veya Acil Müdahaleye mi İhtiyacınız Var?</h3>
-        <p className="text-slate-300 text-sm max-w-xl mx-auto">
-          Tarık Çevran ile hemen iletişime geçerek detayları görüşebilir, projenize özel teklif alabilirsiniz.
-        </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4 pt-2">
-          <a
-            href={`tel:${CONTACT_INFO.phoneNumber}`}
-            title={`Tarık ÇEVRAN ${CONTACT_INFO.maskedNumber}`}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg transition"
-          >
-            📞 Hemen Ara
-          </a>
-          <a
-            href={CONTACT_INFO.whatsappLink}
-            title={`Tarık ÇEVRAN WhatsApp ${CONTACT_INFO.maskedNumber}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-base"
-          >
-            <span>💬 WhatsApp</span>
-          </a>
-        </div>
-      </div>
-
-    </div>
+    </>
   );
 }

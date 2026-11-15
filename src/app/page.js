@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { CONTACT_INFO } from '@/constants/contact';
+import AboutModalTrigger from '@/components/AboutModalTrigger';
 import Facebook from '@/components/social-buttons/Facebook';
 import Instagram from '@/components/social-buttons/Instagram';
 import Youtube from '@/components/social-buttons/Youtube';
@@ -53,10 +54,13 @@ export default function HomePage() {
           {/* Sosyal ağlar */}
           <div className="flex flex-row justify-center items-center gap-2 sm:gap-4 pt-4 w-full max-w-md mx-auto">
             <Facebook />
-            <Instagram />
+            <Instagram type="corporate" />
             <Youtube />
             <LinkedIn />
             <Gmail />
+          </div>
+          <div className="flex flex-row justify-center items-center gap-2 sm:gap-4 pt-4 w-full max-w-md mx-auto">
+            <AboutModalTrigger />
           </div>
         </div>
       </section>
