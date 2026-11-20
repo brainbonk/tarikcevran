@@ -103,32 +103,20 @@ export default function AboutModalTrigger() {
                 </p>
               </div>
 
-              <p className="text-sm leading-relaxed">
-                Denizcilik ve ağır sanayi sektöründe uzun yıllara dayanan saha tecrübesine sahip olan <strong>Tarık Çevran</strong>, zorlu hava ve dip koşullarında yüksek güvenlik standartlarıyla görev yapan profesyonel <strong>1. Sınıf Sanayi Dalgıcıdır</strong>.
+              <p className="text-sm leading-relaxed text-start">
+                Denizcilik ve ağır sanayi sektöründe uzun yıllara dayanan saha tecrübesine sahip olan <strong>Tarık Çevran</strong>, zorlu hava ve dip koşullarında yüksek güvenlik standartlarıyla görev yapan profesyonel <strong>1. Sınıf Sanayi Dalgıcıdır</strong>. <br />2020 yılında <strong>Rize Recep Tayyip Erdoğan Üniversitesi Su Altı Teknolojisi Bölümü'nden</strong> mezun olup aynı yıl itibariyle Türkiye'nin önde gelen tersanelerinde ve liman tesislerinde su altı operasyonlarında aktif olarak görev almıştır. 1997 Balıkesir doğumlu <strong>Tarık Çevran</strong>, halen Balıkesir Edremit'te ikamet etmektedir.
               </p>
 
-              {/* İş Deneyimi & Uzmanlık Alanları */}
+              {/* İş Deneyimi */}
               <div className="space-y-3 pt-1">
                 <h3 className="text-sm font-bold text-white uppercase tracking-wider border-b border-slate-800 pb-2">
-                  Saha Tecrübesi & Uzmanlık Alanları
+                  Saha Tecrübesi
                 </h3>
                 <ul className="space-y-2 text-sm">
-                  <li className="flex items-start gap-2">
+                  <li className="flex items-start text-start gap-2">
                     <span className="text-blue-400 mt-0.5">✔</span>
                     <span>
-                      <strong>Tersane & Gemi Operasyonları:</strong> Yalova Tersan ve İzmir Aliağa başta olmak üzere büyük ölçekli tersanelerde su altı NDT kalınlık ölçümü, klas sörveyi, pervane polisajı ve karina bakımı.
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-400 mt-0.5">✔</span>
-                    <span>
-                      <strong>Su Altı Kaynak & Kesim:</strong> Liman, iskele, boru hattı ve gemi saclarında yüksek mukavemetli su altı kaynak ve oxy-arc kesim uygulamaları.
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-400 mt-0.5">✔</span>
-                    <span>
-                      <strong>Acil Arama & Kurtarma:</strong> Ege ve Marmara marinalarında (Kuşadası, Bodrum, Ayvalık) batık tekne çıkarma, çapa-zincir ve değerli eşya kurtarma müdahaleleri.
+                      <strong>Tersane & Gemi Operasyonları:</strong> Yalova Tersan ve İzmir Aliağa başta olmak üzere büyük ölçekli tersaneler
                     </span>
                   </li>
                 </ul>

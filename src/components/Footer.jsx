@@ -12,7 +12,7 @@ export default function Footer() {
                 <div className="md:col-span-3 space-y-3 items-center flex flex-col">
                     <div className="relative w-80 h-90 md:w-60 md:h-70 rounded-xl overflow-hidden border border-slate-800 shadow-md flex-shrink-0 bg-slate-900">
                         <Image
-                            src="/images/kartvizit-mavi.jpg"
+                            src="/images/corporate/kartvizit-mavi.jpg"
                             alt="Çevran Sualtı Hizmetleri Logo"
                             fill
                             sizes="(max-width: 768px) 100vw, 200px"

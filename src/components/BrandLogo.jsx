@@ -7,7 +7,7 @@ export function BrandLogo() {
       {/* Orijinal Görsel Dosyası */}
       <div className="w-16 h-13 flex-shrink-0 relative flex items-center justify-center bg-slate-900 rounded-2xl border border-blue-500/30 overflow-hidden shadow-lg">
         <Image 
-          src="/logo2.png" 
+          src="/web-logo.png" 
           alt="Tarık Çevran Su Altı Logo" 
           fill 
           sizes="(max-width: 768px) 100vw, 200px"
